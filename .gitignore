@@ -1,0 +1,16 @@
+__pycache__/
+.DS_Store
+*.pyc
+.venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.cache/
+.env
+.env.*
+CLAUDE.md
+uv.lock
+site/
+int/

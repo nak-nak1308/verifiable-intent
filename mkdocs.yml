@@ -1,0 +1,105 @@
+site_name: Verifiable Intent
+site_url: https://verifiableintent.dev/
+site_description: Open specification for cryptographic agent authorization in commerce
+repo_url: https://github.com/agent-intent/verifiable-intent
+repo_name: agent-intent/verifiable-intent
+docs_dir: docs
+copyright: >
+  Copyright &copy; 2026 Verifiable Intent Contributors &mdash;
+  <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>
+
+nav:
+  - Home: index.md
+  - Specification:
+    - Overview: spec/README.md
+    - Credential Format: spec/credential-format.md
+    - Constraints: spec/constraints.md
+    - Security Model: spec/security-model.md
+    - Design Rationale: spec/design-rationale.md
+  - Protocol Landscape:
+    - Overview: protocol-landscape/index.md
+    - Protocol Ecosystem: protocol-landscape/protocols.md
+    - Cross-Protocol Glossary: protocol-landscape/glossary.md
+  - Community:
+    - Contributing: CONTRIBUTING.md
+    - Code of Conduct: CODE_OF_CONDUCT.md
+    - Security Policy: SECURITY.md
+    - Changelog: CHANGELOG.md
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  logo: assets/images/vi-logo.svg
+  favicon: assets/images/favicon.png
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    scheme: slate
+    primary: custom
+    accent: custom
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - navigation.path
+    - search.suggest
+    - search.highlight
+    - header.autohide
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+
+plugins:
+  - search
+  - privacy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/agent-intent/verifiable-intent
+      name: GitHub
+  generator: false

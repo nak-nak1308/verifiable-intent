@@ -1,0 +1,332 @@
+{% extends "main.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <style>.md-main { margin-top: 0; }</style>
+{% endblock %}
+
+{% block tabs %}{{ super() }}{% endblock %}
+
+{% block content %}
+<div class="vi-home">
+
+  <!-- Hero — neutral dark chrome -->
+  <section class="vi-hero">
+    <div class="vi-hero__logo">
+      <img src="{{ 'assets/images/vi-logo.svg' | url }}" alt="Verifiable Intent">
+    </div>
+    <h1 class="vi-hero__title">Verifiable Intent</h1>
+    <p class="vi-hero__tagline">
+      Open specification for cryptographic agent authorization in commerce.
+      Tamper-evident delegation chains that bind AI agent actions to human-approved scope.
+    </p>
+    <div class="vi-hero__actions">
+      <a href="{{ 'spec/' | url }}" class="md-button md-button--primary">
+        Read the Spec
+      </a>
+      <a href="https://github.com/agent-intent/verifiable-intent" class="md-button md-button--secondary">
+        View on GitHub
+      </a>
+    </div>
+    <div class="vi-hero__badge">Draft v0.1</div>
+  </section>
+
+  <!-- Traditional vs Agentic Commerce -->
+  <section class="vi-compare">
+    <div class="vi-compare__headers">
+      <span class="vi-compare__header">Traditional Commerce</span>
+      <span class="vi-compare__header">Agentic Commerce</span>
+    </div>
+    <div class="vi-compare__rows">
+
+      <!-- Identity (L1 emerald, open by default) -->
+      <div class="vi-compare__row vi-compare__row--l1" data-open>
+        <div class="vi-compare__bar">
+          <span class="vi-compare__bar-label">Identity</span>
+          <span class="vi-compare__bar-pills">
+            <span class="vi-compare__pill">
+              <span class="vi-compare__pill-icon">{% include ".icons/material/fingerprint.svg" %}</span>
+              Proves identity
+            </span>
+            <span class="vi-compare__bar-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+            <span class="vi-compare__pill vi-compare__pill--accent">
+              <span class="vi-compare__pill-icon">{% include ".icons/material/key-chain.svg" %}</span>
+              Proves identity + delegation
+            </span>
+          </span>
+          <span class="vi-compare__chevron">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </div>
+        <div class="vi-compare__detail">
+          <div class="vi-compare__cell">
+            <div class="vi-compare__icon">{% include ".icons/material/fingerprint.svg" %}</div>
+            <span class="vi-compare__text">Authentication proves identity &mdash; <em>&ldquo;are you the cardholder?&rdquo;</em></span>
+          </div>
+          <div class="vi-compare__detail-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="vi-compare__cell vi-compare__cell--accent">
+            <div class="vi-compare__icon">{% include ".icons/material/key-chain.svg" %}</div>
+            <span class="vi-compare__text">Authentication proves identity <em>and</em> delegation &mdash; <em>&ldquo;is this agent authorized by the cardholder?&rdquo;</em></span>
+          </div>
+          <div class="vi-compare__takeaway">From &ldquo;who are you?&rdquo; to &ldquo;who are you, and who authorized this agent?&rdquo;</div>
+        </div>
+      </div>
+
+      <!-- Consent (L2 blue) -->
+      <div class="vi-compare__row vi-compare__row--l2">
+        <div class="vi-compare__bar">
+          <span class="vi-compare__bar-label">Consent</span>
+          <span class="vi-compare__bar-pills">
+            <span class="vi-compare__pill">
+              <span class="vi-compare__pill-icon">{% include ".icons/material/credit-card.svg" %}</span>
+              Direct authorization
+            </span>
+            <span class="vi-compare__bar-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+            <span class="vi-compare__pill vi-compare__pill--accent">
+              <span class="vi-compare__pill-icon">{% include ".icons/material/file-sign.svg" %}</span>
+              Delegated authority
+            </span>
+          </span>
+          <span class="vi-compare__chevron">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </div>
+        <div class="vi-compare__detail">
+          <div class="vi-compare__cell">
+            <div class="vi-compare__icon">{% include ".icons/material/credit-card.svg" %}</div>
+            <span class="vi-compare__text">Buyer authorizes and pays in one step &mdash; consent is captured at the moment of purchase</span>
+          </div>
+          <div class="vi-compare__detail-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="vi-compare__cell vi-compare__cell--accent">
+            <div class="vi-compare__icon">{% include ".icons/material/file-sign.svg" %}</div>
+            <span class="vi-compare__text">Buyer delegates authority before the agent acts &mdash; consent and action are separated in time</span>
+          </div>
+          <div class="vi-compare__takeaway">Consent becomes a durable artifact, verifiable after the fact</div>
+        </div>
+      </div>
+
+      <!-- Scope (L2 blue) -->
+      <div class="vi-compare__row vi-compare__row--l2">
+        <div class="vi-compare__bar">
+          <span class="vi-compare__bar-label">Scope</span>
+          <span class="vi-compare__bar-pills">
+            <span class="vi-compare__pill">
+              <span class="vi-compare__pill-icon">{% include ".icons/material/cart.svg" %}</span>
+              Single transaction
+            </span>
+            <span class="vi-compare__bar-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+            <span class="vi-compare__pill vi-compare__pill--accent">
+              <span class="vi-compare__pill-icon">{% include ".icons/material/sitemap.svg" %}</span>
+              Many transactions
+            </span>
+          </span>
+          <span class="vi-compare__chevron">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </div>
+        <div class="vi-compare__detail">
+          <div class="vi-compare__cell">
+            <div class="vi-compare__icon">{% include ".icons/material/cart.svg" %}</div>
+            <span class="vi-compare__text">One buyer, one checkout, one atomic event &mdash; transaction scope is implicit</span>
+          </div>
+          <div class="vi-compare__detail-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="vi-compare__cell vi-compare__cell--accent">
+            <div class="vi-compare__icon">{% include ".icons/material/sitemap.svg" %}</div>
+            <span class="vi-compare__text">One delegation could mean many transactions across merchants over days or weeks</span>
+          </div>
+          <div class="vi-compare__takeaway">Scope must be explicit and enforceable</div>
+        </div>
+      </div>
+
+      <!-- Visibility (L3 gold) -->
+      <div class="vi-compare__row vi-compare__row--l3">
+        <div class="vi-compare__bar">
+          <span class="vi-compare__bar-label">Visibility</span>
+          <span class="vi-compare__bar-pills">
+            <span class="vi-compare__pill">
+              <span class="vi-compare__pill-icon">{% include ".icons/material/storefront.svg" %}</span>
+              Buyer evaluates
+            </span>
+            <span class="vi-compare__bar-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+            <span class="vi-compare__pill vi-compare__pill--accent">
+              <span class="vi-compare__pill-icon">{% include ".icons/material/robot.svg" %}</span>
+              Agent decides
+            </span>
+          </span>
+          <span class="vi-compare__chevron">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </div>
+        <div class="vi-compare__detail">
+          <div class="vi-compare__cell">
+            <div class="vi-compare__icon">{% include ".icons/material/storefront.svg" %}</div>
+            <span class="vi-compare__text">Seller presents goods &mdash; buyer evaluates and decides</span>
+          </div>
+          <div class="vi-compare__detail-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="vi-compare__cell vi-compare__cell--accent">
+            <div class="vi-compare__icon">{% include ".icons/material/robot.svg" %}</div>
+            <span class="vi-compare__text">Agent may present options or decide autonomously &mdash; buyer may never see the merchant</span>
+          </div>
+          <div class="vi-compare__takeaway">Trust shifts from the checkout UI to delegation signals</div>
+        </div>
+      </div>
+
+      <!-- Confidence (brand orange) -->
+      <div class="vi-compare__row vi-compare__row--brand">
+        <div class="vi-compare__bar">
+          <span class="vi-compare__bar-label">Confidence</span>
+          <span class="vi-compare__bar-pills">
+            <span class="vi-compare__pill">
+              <span class="vi-compare__pill-icon">{% include ".icons/material/shield-check.svg" %}</span>
+              Established signals
+            </span>
+            <span class="vi-compare__bar-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+            <span class="vi-compare__pill vi-compare__pill--accent">
+              <span class="vi-compare__pill-icon">{% include ".icons/material/magnify-scan.svg" %}</span>
+              New signals needed
+            </span>
+          </span>
+          <span class="vi-compare__chevron">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </div>
+        <div class="vi-compare__detail">
+          <div class="vi-compare__cell">
+            <div class="vi-compare__icon">{% include ".icons/material/shield-check.svg" %}</div>
+            <span class="vi-compare__text">Merchant accepts based on established signals &mdash; card network auth, AVS, 3DS, fraud scoring</span>
+          </div>
+          <div class="vi-compare__detail-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="vi-compare__cell vi-compare__cell--accent">
+            <div class="vi-compare__icon">{% include ".icons/material/magnify-scan.svg" %}</div>
+            <span class="vi-compare__text">Merchant needs new signals &mdash; is this agent authorized? Within what scope? By whom?</span>
+          </div>
+          <div class="vi-compare__takeaway">Merchants need authorization, scope, and accountability signals</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Three-Link Chain — adapted from 02-three-link-chain.html -->
+  <section class="vi-chain">
+    <h2>Delegation Chain</h2>
+    <div class="vi-chain__steps">
+
+      <div class="vi-chain__step vi-chain__step--l1">
+        {% include ".icons/material/bank.svg" %}
+        <span class="vi-chain__label">Layer 1</span>
+        <span class="vi-chain__role">Identity</span>
+        <span class="vi-chain__desc">Issuer signs credential</span>
+      </div>
+
+      <div class="vi-chain__connector">
+        <div class="vi-chain__lock-line"></div>
+      </div>
+
+      <div class="vi-chain__step vi-chain__step--l2">
+        {% include ".icons/material/account.svg" %}
+        <span class="vi-chain__label">Layer 2</span>
+        <span class="vi-chain__role">Intent</span>
+        <span class="vi-chain__desc">User sets constraints</span>
+      </div>
+
+      <div class="vi-chain__connector">
+        <div class="vi-chain__lock-line"></div>
+      </div>
+
+      <div class="vi-chain__step vi-chain__step--l3">
+        {% include ".icons/material/robot.svg" %}
+        <span class="vi-chain__label">Layer 3</span>
+        <span class="vi-chain__role">Action</span>
+        <span class="vi-chain__desc">Agent proves scope</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Feature Cards -->
+  <section class="vi-features">
+    <h2>Key Capabilities</h2>
+    <div class="vi-features__grid">
+      <div class="vi-features__card vi-features__card--l1">
+        <span class="vi-features__icon">
+          {% include ".icons/material/link-lock.svg" %}
+        </span>
+        <h3>Layered Credentials</h3>
+        <p>
+          SD-JWT delegation chain binding issuer, user, and agent through
+          key confirmation claims. Each layer cryptographically constrains the next.
+        </p>
+      </div>
+      <div class="vi-features__card vi-features__card--l2">
+        <span class="vi-features__icon">
+          {% include ".icons/material/shield-check.svg" %}
+        </span>
+        <h3>Constraint Enforcement</h3>
+        <p>
+          8 constraint types &mdash; amount bounds, merchant allowlists, budget caps,
+          recurrence terms &mdash; cryptographically bound and machine-verifiable.
+        </p>
+      </div>
+      <div class="vi-features__card vi-features__card--l3">
+        <span class="vi-features__icon">
+          {% include ".icons/material/swap-horizontal.svg" %}
+        </span>
+        <h3>Protocol Agnostic</h3>
+        <p>
+          Works across agent payment ecosystems. Integration mappings for
+          AP2, ACP, and UCP. Extensible to other protocols.
+        </p>
+      </div>
+      <div class="vi-features__card vi-features__card--brand">
+        <span class="vi-features__icon">
+          {% include ".icons/material/eye-off.svg" %}
+        </span>
+        <h3>Selective Disclosure</h3>
+        <p>
+          Data is private by default, revealed only to the right party
+          at the right time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+document.querySelectorAll('.vi-compare__bar').forEach(function(bar) {
+  bar.addEventListener('click', function() {
+    var row = bar.closest('.vi-compare__row');
+    var isOpen = row.hasAttribute('data-open');
+    row.closest('.vi-compare__rows').querySelectorAll('.vi-compare__row[data-open]').forEach(function(r) {
+      r.removeAttribute('data-open');
+    });
+    if (!isOpen) {
+      row.setAttribute('data-open', '');
+    }
+  });
+});
+</script>
+{% endblock %}
+
+{% block footer %}{{ super() }}{% endblock %}
